@@ -1,0 +1,3 @@
+[submodule "import/ChrononAPI"]
+	path = import/ChrononAPI
+	url = git@github.com:wildjoe/Chronon-API.git
