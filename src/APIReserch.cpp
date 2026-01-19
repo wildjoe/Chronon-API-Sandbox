@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "IAPI/iJsonAPI.h"
+#include "ChrononAPI/iJsonAPI.h"
 
 using namespace std;
 
@@ -17,7 +17,7 @@ int main()
 			api.push("id", buff);
 
 		}
-		catch (ChronoAPI_1_0::APIError apierror) {
+		catch (ChronoAPI_1_0::APIError apierror) { 
 			std::cout << "api error " << static_cast<int>(apierror);
 		}
 		catch (std::exception e) {

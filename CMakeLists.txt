@@ -1,7 +1,7 @@
 ﻿# CMakeList.txt: проект CMake для APIReserch; включите исходный код и определения,
 # укажите здесь логику для конкретного проекта.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.11)
 
 # Включение горячей перезагрузки для компиляторов MSVC, если поддерживается.
 if (POLICY CMP0141)
@@ -11,8 +11,15 @@ endif()
 
 project ("APIReserch")
 
-# Добавьте источник в исполняемый файл этого проекта.
-add_executable (APIReserch "APIReserch.cpp"   "IAPI/API_1_0.h" "IAPI/iJsonAPI.h" "IAPI/APICore.h")
+add_executable (APIReserch)
+
+add_subdirectory("src")
+add_subdirectory("import")
+
+target_link_libraries(APIReserch
+  PRIVATE
+    ChrononAPI
+)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET APIReserch PROPERTY CXX_STANDARD 17)
